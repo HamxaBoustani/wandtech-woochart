@@ -1,11 +1,20 @@
 <?php
 /**
- * Plugin Name: Wandtech WooChart (Optimized & Safe)
- * Description: High-performance and safe dashboard charts for WooCommerce sales and order statuses.
- * Version: 2.1
- * Author: Hamxa (Refactored by Advanced AI Architect)
- * Text Domain: wandtech-woochart
- * Domain Path: /languages
+ * Plugin Name:       Wandtech WooChart
+ * Plugin URI:        https://github.com/HamxaBoustani/wandtech-woochart/
+ * Description:       High-performance and safe dashboard charts for WooCommerce sales and order statuses.
+ * Version:           2.1
+ * Author:            Hamxa
+ * Author URI:        https://github.com/HamxaBoustani
+ * License:           GPL v2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       wandtech-woochart
+ * Domain Path:       /languages
+ * Requires at least: 5.8
+ * Tested up to:      6.5
+ * Requires PHP:      7.4
+ * WC requires at least: 7.0
+ * WC tested up to: 8.5
  */
 
 if (!defined('ABSPATH')) exit;
