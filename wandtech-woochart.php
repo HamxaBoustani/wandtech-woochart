@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Wandtech WooChart
  * Plugin URI:        https://github.com/HamxaBoustani/wandtech-woochart/
- * Description:       High-performance and safe dashboard charts for WooCommerce sales and order statuses.
+ * Description:       Dashboard charts for WooCommerce sales and order statuses.
  * Version:           2.1
  * Author:            Hamxa
  * Author URI:        https://github.com/HamxaBoustani
