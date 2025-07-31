@@ -8,6 +8,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const currencySymbol = wandtech_chart_data.currency_symbol;
     const i18n_labels = wandtech_chart_i18n.labels;
 
+    // A beautiful, modern, and high-contrast color palette for data visualization
+    const chartColors = [
+        '#3B82F6', // Blue 500
+        '#10B981', // Emerald 500
+        '#F97316', // Orange 500
+        '#8B5CF6', // Violet 500
+        '#EF4444', // Red 500
+        '#F59E0B', // Amber 500
+        '#14B8A6', // Teal 500
+        '#6366F1', // Indigo 500
+        '#EC4899', // Pink 500
+        '#84CC16', // Lime 500
+    ];
+
     /**
      * Sales Chart Initialization
      */
@@ -24,14 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 datasets: [{
                     label: 'Sales Summary',
                     data: salesValues,
-                    backgroundColor: [
-                        '#4BC0C0',
-                        '#36A2EB',
-                        '#FF6384',
-                        '#FFCE56',
-                        '#9966FF',
-                        '#FF9F40',
-                    ],
+                    backgroundColor: chartColors, // Use the shared color palette
                     borderWidth: 1
                 }]
             },
@@ -68,18 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 labels: statusData.labels,
                 datasets: [{
                     data: statusData.values,
-                    backgroundColor: [
-                        '#36A2EB',
-                        '#FF6384',
-                        '#FFCE56',
-                        '#4BC0C0',
-                        '#9966FF',
-                        '#FF9F40',
-                        '#C9CBCF',
-                        '#8AC926',
-                        '#FF595E',
-                        '#1982C4'
-                    ],
+                    backgroundColor: chartColors, // Use the same shared color palette
                 }]
             },
             options: {
@@ -94,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             label: function (context) {
                                 let label = context.label || '';
                                 let value = context.parsed;
-								if (context.dataset.data.length === 0) return `${label}: ${value}`;
+                                if (context.dataset.data.length === 0) return `${label}: ${value}`;
                                 let sum = context.dataset.data.reduce((a, b) => a + b, 0);
                                 let percentage = sum > 0 ? ((value / sum) * 100).toFixed(2) + '%' : '0%';
                                 return `${label}: ${value} (${percentage})`;
