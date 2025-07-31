@@ -2,11 +2,11 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Wandtech WooChart 2.2\n"
+"Project-Id-Version: Wandtech WooChart 2.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wandtech-"
 "woochart\n"
-"POT-Creation-Date: 2025-07-31T06:04:55+00:00\n"
-"PO-Revision-Date: 2025-07-31 09:42+0330\n"
+"POT-Creation-Date: 2025-07-31T07:13:24+00:00\n"
+"PO-Revision-Date: 2025-07-31 10:49+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -19,7 +19,7 @@ msgstr ""
 #. Plugin Name of the plugin
 #: wandtech-woochart.php
 msgid "Wandtech WooChart"
-msgstr "ووچارت وندتک"
+msgstr "ووچارت وند تک"
 
 #. Plugin URI of the plugin
 #: wandtech-woochart.php
@@ -41,38 +41,38 @@ msgstr ""
 msgid "https://github.com/HamxaBoustani"
 msgstr ""
 
-#: wandtech-woochart.php:62
-msgid "WooCommerce is not active."
-msgstr "ووکامرس فعال نیست."
-
-#: wandtech-woochart.php:64 wandtech-woochart.php:68
-msgid "WooCommerce Sales Summary"
-msgstr "خلاصه فروش ماهانه ووکامرس"
-
-#: wandtech-woochart.php:65 wandtech-woochart.php:69
-msgid "WooCommerce Orders by Status"
-msgstr "سفارش‌های ووکامرس بر اساس وضعیت"
-
-#: wandtech-woochart.php:125
+#: wandtech-woochart.php:61
 msgid "Net Sales"
 msgstr "فروش خالص"
 
-#: wandtech-woochart.php:126
+#: wandtech-woochart.php:62
 msgid "Gross Sales"
 msgstr "فروش ناخالص"
 
-#: wandtech-woochart.php:127
+#: wandtech-woochart.php:63
 msgid "Refunds"
 msgstr "استردادها"
 
-#: wandtech-woochart.php:128
+#: wandtech-woochart.php:64
 msgid "Coupons"
 msgstr "کدهای تخفیف"
 
-#: wandtech-woochart.php:129
+#: wandtech-woochart.php:65
 msgid "Taxes"
 msgstr "مالیات‌ها"
 
-#: wandtech-woochart.php:130
+#: wandtech-woochart.php:66
 msgid "Shipping"
 msgstr "هزینه ارسال"
+
+#: wandtech-woochart.php:78
+msgid "WooCommerce is not active."
+msgstr "ووکامرس فعال نیست."
+
+#: wandtech-woochart.php:79 wandtech-woochart.php:83
+msgid "WooCommerce Sales Summary"
+msgstr "خلاصه فروش ووکامرس"
+
+#: wandtech-woochart.php:80 wandtech-woochart.php:84
+msgid "WooCommerce Orders by Status"
+msgstr "سفارش‌های ووکامرس بر اساس وضعیت"

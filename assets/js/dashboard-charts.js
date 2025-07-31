@@ -1,14 +1,12 @@
-// ===== PRODUCTION-READY CODE =====
-// assets/js/dashboard-charts.js
-
+// Wandtech WooChart - Dashboard Scripts
 document.addEventListener('DOMContentLoaded', function () {
-    // wandtech_chart_data is passed from PHP via wp_localize_script
-    if (typeof wandtech_chart_data === 'undefined') {
-        console.error('Wandtech Chart Data is not available.');
+    if (typeof wandtech_chart_data === 'undefined' || typeof wandtech_chart_i18n === 'undefined') {
+        console.error('Wandtech Chart Data or I18n strings are not available.');
         return;
     }
 
     const currencySymbol = wandtech_chart_data.currency_symbol;
+    const i18n_labels = wandtech_chart_i18n.labels;
 
     /**
      * Sales Chart Initialization
@@ -16,21 +14,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const salesCanvas = document.getElementById('wandtech-sales-chart');
     if (salesCanvas) {
         const salesData = wandtech_chart_data.sales_data;
+        const salesLabels = Object.keys(salesData).map(key => i18n_labels[key] || key);
+        const salesValues = Object.values(salesData);
+
         new Chart(salesCanvas, {
-            // ===== CHANGE #1: Changed chart type to 'doughnut' =====
             type: 'doughnut',
             data: {
-                labels: salesData.labels,
+                labels: salesLabels,
                 datasets: [{
                     label: 'Sales Summary',
-                    data: salesData.values,
+                    data: salesValues,
                     backgroundColor: [
-                        '#4BC0C0', // Net Sales
-                        '#36A2EB', // Gross Sales
-                        '#FF6384', // Refunds
-                        '#FFCE56', // Coupons
-                        '#9966FF', // Taxes
-                        '#FF9F40', // Shipping
+                        '#4BC0C0',
+                        '#36A2EB',
+                        '#FF6384',
+                        '#FFCE56',
+                        '#9966FF',
+                        '#FF9F40',
                     ],
                     borderWidth: 1
                 }]
@@ -38,20 +38,16 @@ document.addEventListener('DOMContentLoaded', function () {
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                // ===== CHANGE #2: Updated options for a doughnut chart =====
                 plugins: {
                     legend: {
-                        position: 'bottom', // Legend at the bottom looks good for doughnut charts
+                        position: 'bottom'
                     },
                     tooltip: {
                         callbacks: {
                             label: function (context) {
                                 let label = context.label || '';
                                 let value = context.parsed;
-                                return `${label}: ${value.toLocaleString(undefined, {
-                                    style: 'currency',
-                                    currency: currencySymbol
-                                })}`;
+                                return `${label}: ${value.toLocaleString(undefined, { style: 'currency', currency: currencySymbol })}`;
                             }
                         }
                     }
@@ -61,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /**
-     * Order Status Chart Initialization (No Changes Here)
+     * Order Status Chart Initialization
      */
     const statusCanvas = document.getElementById('wandtech-status-chart');
     if (statusCanvas) {
@@ -73,8 +69,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 datasets: [{
                     data: statusData.values,
                     backgroundColor: [
-                        '#36A2EB', '#FF6384', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40',
-                        '#C9CBCF', '#8AC926', '#FF595E', '#1982C4'
+                        '#36A2EB',
+                        '#FF6384',
+                        '#FFCE56',
+                        '#4BC0C0',
+                        '#9966FF',
+                        '#FF9F40',
+                        '#C9CBCF',
+                        '#8AC926',
+                        '#FF595E',
+                        '#1982C4'
                     ],
                 }]
             },
@@ -85,11 +89,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     legend: {
                         position: 'bottom'
                     },
-                     tooltip: {
+                    tooltip: {
                         callbacks: {
                             label: function (context) {
                                 let label = context.label || '';
                                 let value = context.parsed;
+								if (context.dataset.data.length === 0) return `${label}: ${value}`;
                                 let sum = context.dataset.data.reduce((a, b) => a + b, 0);
                                 let percentage = sum > 0 ? ((value / sum) * 100).toFixed(2) + '%' : '0%';
                                 return `${label}: ${value} (${percentage})`;
