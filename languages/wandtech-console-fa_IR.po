@@ -2,11 +2,11 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Wandtech WooChart 2.1\n"
+"Project-Id-Version: Wandtech WooChart 2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wandtech-"
 "woochart\n"
-"POT-Creation-Date: 2025-07-31T05:33:34+00:00\n"
-"PO-Revision-Date: 2025-07-31 09:16+0330\n"
+"POT-Creation-Date: 2025-07-31T06:04:55+00:00\n"
+"PO-Revision-Date: 2025-07-31 09:42+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -28,9 +28,7 @@ msgstr ""
 
 #. Description of the plugin
 #: wandtech-woochart.php
-msgid ""
-"High-performance and safe dashboard charts for WooCommerce sales and order "
-"statuses."
+msgid "Dashboard charts for WooCommerce sales and order statuses."
 msgstr "نمودارهای داشبوردی برای فروش و وضعیت سفارش‌های ووکامرس."
 
 #. Author of the plugin
@@ -43,38 +41,38 @@ msgstr ""
 msgid "https://github.com/HamxaBoustani"
 msgstr ""
 
-#: wandtech-woochart.php:56
+#: wandtech-woochart.php:62
 msgid "WooCommerce is not active."
 msgstr "ووکامرس فعال نیست."
 
-#: wandtech-woochart.php:58 wandtech-woochart.php:62
+#: wandtech-woochart.php:64 wandtech-woochart.php:68
 msgid "WooCommerce Sales Summary"
-msgstr "خلاصه فروش ووکامرس"
+msgstr "خلاصه فروش ماهانه ووکامرس"
 
-#: wandtech-woochart.php:59 wandtech-woochart.php:63
+#: wandtech-woochart.php:65 wandtech-woochart.php:69
 msgid "WooCommerce Orders by Status"
 msgstr "سفارش‌های ووکامرس بر اساس وضعیت"
 
-#: wandtech-woochart.php:132
+#: wandtech-woochart.php:125
 msgid "Net Sales"
 msgstr "فروش خالص"
 
-#: wandtech-woochart.php:133
+#: wandtech-woochart.php:126
 msgid "Gross Sales"
 msgstr "فروش ناخالص"
 
-#: wandtech-woochart.php:134
+#: wandtech-woochart.php:127
 msgid "Refunds"
 msgstr "استردادها"
 
-#: wandtech-woochart.php:135
+#: wandtech-woochart.php:128
 msgid "Coupons"
 msgstr "کدهای تخفیف"
 
-#: wandtech-woochart.php:136
+#: wandtech-woochart.php:129
 msgid "Taxes"
 msgstr "مالیات‌ها"
 
-#: wandtech-woochart.php:137
+#: wandtech-woochart.php:130
 msgid "Shipping"
 msgstr "هزینه ارسال"
