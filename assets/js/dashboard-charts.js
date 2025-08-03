@@ -1,7 +1,7 @@
-// ===== PRODUCTION-READY CODE (Version 3.2) =====
+// ===== PRODUCTION-READY CODE (Version 3.2.3) =====
 // Wandtech WooChart - Dashboard Scripts
-// Compatible with PHP plugin version 3.0.0 and later.
-// This version removes all currency units from tooltips for a cleaner look.
+// Compatible with PHP plugin version 3.1.1 and later.
+// This version adds RTL support for legend item layout.
 
 document.addEventListener('DOMContentLoaded', function () {
     // --- 1. Data Validation and Setup ---
@@ -19,9 +19,35 @@ document.addEventListener('DOMContentLoaded', function () {
     const isRtl = document.documentElement.dir === 'rtl';
 
     const CHART_COLORS = [
-        '#3B82F6', '#10B981', '#F97316', '#8B5CF6', '#EF4444',
-        '#F59E0B', '#14B8A6', '#6366F1', '#EC4899', '#84CC16'
+        '#3B82F6', '#10B981', '#EF4444', '#8B5CF6', '#EC4899',
+        '#F97316', '#14B8A6', '#F59E0B', '#6366F1', '#84CC16'
     ];
+
+    // --- Create a reusable options object with enhanced RTL support ---
+    const commonChartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: isRtl ? 'right' : 'left',
+                align: 'start',
+                // ===== THE KEY CHANGE: Enable RTL layout for legend items =====
+                rtl: isRtl, // This tells Chart.js to render legend items in RTL mode
+                // =============================================================
+                labels: {
+                    boxWidth: 20,
+                    padding: 15
+                }
+            }
+        },
+        layout: {
+            padding: {
+                left: isRtl ? 0 : 10,
+                right: isRtl ? 10 : 0
+            }
+        }
+    };
+
 
     // --- 2. Sales Summary Chart ---
     const salesCanvas = document.getElementById('wandtech-sales-chart');
@@ -40,21 +66,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 }]
             },
             options: {
-                responsive: true,
-                maintainAspectRatio: false,
+                ...commonChartOptions,
                 plugins: {
-                    legend: { position: 'bottom' },
+                    ...commonChartOptions.plugins,
                     tooltip: {
-                        rtl: isRtl,
+                        rtl: isRtl, // Tooltip also needs to know about RTL for alignment
                         callbacks: {
-                            label: (context) => {
-                                const value = context.parsed;
-
-                                // ===== THE KEY CHANGE: Just format the number, no currency. =====
-                                // This will automatically add thousand separators (e.g., 1,234,567 or ۱٬۲۳۴٬۵۶۷)
-                                // based on the user's browser locale.
-                                return value.toLocaleString();
-                            }
+                            label: (context) => context.parsed.toLocaleString()
                         }
                     }
                 }
@@ -77,23 +95,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 }]
             },
             options: {
-                responsive: true,
-                maintainAspectRatio: false,
+                ...commonChartOptions,
                 plugins: {
-                    legend: { position: 'bottom' },
+                    ...commonChartOptions.plugins,
                     tooltip: {
-                        rtl: isRtl,
+                        rtl: isRtl, // Tooltip also needs to know about RTL for alignment
                         callbacks: {
                             label: (context) => {
                                 const value = context.parsed;
                                 const data = context.dataset.data || [];
-                                
                                 if (data.length === 0) return `${value}`;
-                                
                                 const sum = data.reduce((a, b) => a + b, 0);
                                 const percentage = sum > 0 ? `(${(value / sum * 100).toFixed(2)}%)` : '';
-                                
-                                // This part remains the same as it doesn't deal with currency.
                                 return `${value} ${percentage}`.trim();
                             }
                         }

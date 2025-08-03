@@ -2,14 +2,14 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Wandtech WooChart 2.4\n"
+"Project-Id-Version: Wandtech WooChart 3.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wandtech-woochart\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-07-31T07:13:24+00:00\n"
+"POT-Creation-Date: 2025-08-03T20:00:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wandtech-woochart\n"
@@ -39,40 +39,42 @@ msgstr ""
 msgid "https://github.com/HamxaBoustani"
 msgstr ""
 
-#: wandtech-woochart.php:61
+#: wandtech-woochart.php:47
 msgid "Net Sales"
 msgstr ""
 
-#: wandtech-woochart.php:62
+#: wandtech-woochart.php:48
 msgid "Gross Sales"
 msgstr ""
 
-#: wandtech-woochart.php:63
+#: wandtech-woochart.php:49
 msgid "Refunds"
 msgstr ""
 
-#: wandtech-woochart.php:64
-msgid "Coupons"
+#: wandtech-woochart.php:50
+msgid "Coupon Discount"
 msgstr ""
 
-#: wandtech-woochart.php:65
+#: wandtech-woochart.php:51
+msgid "Sale Discount"
+msgstr ""
+
+#: wandtech-woochart.php:52
 msgid "Taxes"
 msgstr ""
 
-#: wandtech-woochart.php:66
+#: wandtech-woochart.php:53
 msgid "Shipping"
 msgstr ""
 
-#: wandtech-woochart.php:78
+#: wandtech-woochart.php:60
 msgid "WooCommerce is not active."
 msgstr ""
 
-#: wandtech-woochart.php:79
-#: wandtech-woochart.php:83
+#: wandtech-woochart.php:60
 msgid "WooCommerce Sales Summary"
 msgstr ""
 
-#: wandtech-woochart.php:80
-#: wandtech-woochart.php:84
+#: wandtech-woochart.php:60
 msgid "WooCommerce Orders by Status"
 msgstr ""
